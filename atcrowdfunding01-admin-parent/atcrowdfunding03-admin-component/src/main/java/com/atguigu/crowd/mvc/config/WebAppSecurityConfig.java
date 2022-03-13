@@ -79,7 +79,8 @@ public class WebAppSecurityConfig extends WebSecurityConfigurerAdapter {
 
                     @Override
                     public void handle(HttpServletRequest request, HttpServletResponse response,
-                                       AccessDeniedException accessDeniedException) throws IOException, ServletException {
+                                       AccessDeniedException accessDeniedException) throws IOException,
+                            ServletException {
                         request.setAttribute("exception", new Exception(CrowdConstant.MESSAGE_ACCESS_DENIED));
                         request.getRequestDispatcher("/WEB-INF/system-error.jsp").forward(request, response);
                     }
@@ -96,9 +97,6 @@ public class WebAppSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .logout()  //开启退出登录功能
                 .logoutUrl("/security/do/logout.html")  //指定退出登录地址
-                .logoutSuccessUrl("/admin/to/login/page.html")  //指定退出登录以后前往的地址
-                ;
-
-
+                .logoutSuccessUrl("/admin/to/login/page.html");  //指定退出登录以后前往的地址
     }
 }

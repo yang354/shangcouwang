@@ -273,7 +273,6 @@
 
         //14.给分配权限模态框中的"分配"按钮绑定单击响应函数
         $("#assignBtn").click(function () {
-
             //①收集树形结构的各个节点中被勾选的节点
             //1)声明一个专门的数组存放id
             var authIdArray = []
@@ -296,7 +295,6 @@
                 "roleId":[window.roleId]
             }
             requestBody = JSON.stringify(requestBody)
-
             $.ajax({
                 "url":"assign/do/role/assign/auth.json",
                 "type":"post",
@@ -304,7 +302,6 @@
                 "contentType":"application/json;charset=UTF-8",
                 "dataType":"json",
                 "success":function (response) {
-
                     var result = response.result
                     if (result =="SUCCESS"){
                         layer.msg("操作成功")

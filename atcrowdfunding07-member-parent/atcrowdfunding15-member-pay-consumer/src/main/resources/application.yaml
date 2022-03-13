@@ -1,0 +1,35 @@
+server:
+  port: 7000
+spring:
+  application:
+    name: atguigu-crowd-pay
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+  redis:
+    host: 127.0.0.1
+  session:
+    store-type: redis
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1000/eureka
+
+ali:
+  pay:
+    #支付宝公钥
+    alipay-public-key: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmJDYPPG/Zf6/gdmgia1fXS0jHNFlfk1UOYdphFhd2+Kzr570RdYXsACW3NxNJ9DUgAKjKWZgu+ZF00lYpi5SMP7e5tHtLYqnZga3v+yZ8+8EP2LERrADoor4PyMmxY5dpoeW802mvH37tbVGkJW5wa3L1gprGRpKhKUVwL+YZ2E7w6bHgNShSsCYfqGkRsHv32M47TqUf9XfMv4MNT2g+1xalDMYEX+sQWZHkwfFjXOWTZ0yOL511MIViwa4TPM60FQ3eafMYtaD2MKTAvuZgjlkr1+VcLvbR9CdHx0kvi5jnBG5bjkcMXNE2OXCnNwR8HXlkvtHRLdgvEh7W3pBtQIDAQAB
+    #支付宝APPID
+    app-id: 2021000119619191
+    charset: utf-8
+    #支付宝网关（沙箱环境）
+    gateway-url: https://openapi.alipaydev.com/gateway.do
+    #应用私钥
+    merchant-private-key: MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCXwBcXWecg/18LFn3L+5j99+E7HKuFIGU/qBb/Zoma6aCwAxPq2qbG3m0LkIcEq1JH3mX3/NuUJ2PVLVL5C9XWf8kr4dVIKQ8nkAulk6ptU5BR7QkrEirscP4e1pYUbQ/pNMggzlKBIcEY1oVOsB8LvRpLs4mOiIl3vFe7z0qe+v03hV7CnmlBkNHzp20yzZ8C0BKdD6Wlkn/yCWdafBjXdlEPMXW/uRjV0U5FeL83+9Yj/8+O+IC7SWhTFurmNEWVB1RUTqRH+m0YHfDE36qxIznUIXRKeAX+J99soN7BtxtIegJDXl26rnaBNkdAncPAf1ES53m2vSzderwI5URXAgMBAAECggEABFpmTy0tDC1HNLI4eZmGEgMCWwe/g9oiDWls/3aZi/AXw/TSpXIQRrQqvKIwvVmMyrL+idafFejrXDoonyxPvg98Xd3kmGVVIfVn4CAUS36SLUd3c9zZjl7Pa2MMexmF01LISuigRUQKngPJXzB+M4ABORq1X3lbOCwW+DRCF71fzsER++Dfee3rLgzxwJZJ7AsQC6VSqp5mj9ULMx8W/6Og+/vGV60dXAfSklKNwhVgA+fZOUaOx4bx/l0Vr/yI3+S0P66uKQiBLaq+xvNFw1UQ8KnhufSWtbzRGZ7T/SZ/ZhXSGFhB0V1kLwOhQMFGoTLTeaxzhO9HZJJ3UGEDAQKBgQD8PvO3AidA38Rkn5wDizoN9hlVDB8rZoz+amLgLwqEnhMvaw5pbEjydTAVkoJmlXa8sWlLPXRf6PmU9EdKrAUF+OOzi7wkht6JspFpAkWhYU68EMgDESDMB5nMiaEZeuVMr/nNmfjO1cHR0Kfxvo1muCy3nvMKjz8MTkf2Qhi3BwKBgQCaAkDxJ5DYeh6F19cmc0gPGRt+jx515YxtEpkK9cDQT+fy2fT6bRysNodEY9SQpnNiQqyx6yVYo8dyyJrI7rdNKyzeR6D0WuQHmDb0dygZ151w//gp5JmWPfj9T/HvOFG7c9dUgMUgpdleXuEW0T4zTMET8CbtVN1m1+6z9ZjkMQKBgCthjDqSJTwT/8uqY4N8g0x5YZvtzMKDDYaHt1+E15M9OGF0UPMyi00feFiNbN3FoLkM7eXhuMzx3VKPvF8MPITtbAOp6X6Cr20RB87+dAkwGgFgBXX5kSFlwT6bANjH+P16WkTQ0SiJPJ8f+nIp6lmbHR2rOXM8dYRhRiEE9wkrAoGAcePyxKO+0OfWRKJugAfGpSurEneiTgt4Qnz7YoiEk0hUPlqCeONRzeTxOVkeK+5765FlBpnfX2KWr0K8fJVURqQEJUkRNUM12IvvL/AiXqH90z/n9IsSLXIc/K8vOfoLLzWmat5jaRZc3hYKHQaWGffL3QO+tcoJhPFwm/KmozECgYBQQVqh5z+NrJzt3mBrW6sOL3uTVwvZtKp0koc21kABd4w6f9nHE+y7O9IiMGB4GnPY2EdNfeZnFfQ6+xbYC/xjkbqeEQL5qQbTh3WFQCNmqCBaJrIUKjjrjGKDYQgQaGnXkCPNhkiZpOm4rQrlFOpGsoqADfG4CuX7IC9nGRuChw==
+    #工程公网访问地址使用内网穿透客户端提供的域名
+    notify-url: http://gi8urp.natappfree.cc/pay/notify
+    #工程公网访问地址使用内网穿透客户端提供的域名
+    return-url: http://localhost/pay/return
+    #签名方式
+    sign-type: RSA2

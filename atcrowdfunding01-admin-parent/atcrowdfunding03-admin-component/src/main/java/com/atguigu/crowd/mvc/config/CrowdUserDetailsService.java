@@ -6,19 +6,20 @@ import com.atguigu.crowd.service.api.AdminService;
 import com.atguigu.crowd.service.api.AuthService;
 import com.atguigu.crowd.service.api.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Configuration;
+
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Component;
 
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Configuration
+@Component
 public class CrowdUserDetailsService implements UserDetailsService {
 
     @Autowired

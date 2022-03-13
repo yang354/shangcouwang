@@ -33,6 +33,7 @@ public class AdminHandler {
         return "redirect:/admin/get/page.html?pageNum="+pageNum+"&keyword"+keyword;
     }
 
+    @PreAuthorize("hasRole('经理')")
     @RequestMapping("/admin/to/edit/page.html")
     public String toEditPage(
             @RequestParam("adminId") Integer adminId,
